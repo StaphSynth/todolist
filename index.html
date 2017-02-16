@@ -14,6 +14,14 @@
           <option value="priority">Priority</option>
           <option value="thing">A-Z</option>
         </select>
+        <button ng-click="ctrl.add()">Add this!</button>
+        Thing: <input type="text" ng-model="ctrl.userItem" placeholder="What d'ya have to do?">
+        Priority:
+        <select ng-model="ctrl.userPriority">
+          <option value="0">High</option>
+          <option value="1">Medium</option>
+          <option value="2">Low</option>
+        </select>
         <ul>
           <li ng-repeat="item in ctrl.list | orderBy:ctrl.order">
             <h3>{{ item.thing }}</h3>

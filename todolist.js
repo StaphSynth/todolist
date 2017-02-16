@@ -2,7 +2,8 @@
 var listApp = angular.module('todolistApp', []);
 
 listApp.controller('todolistController', function(){
-  this.list = [
+  var ctrl = this;
+  ctrl.list = [
     {
       thing: 'feed the cat',
       priority: 0
@@ -28,5 +29,20 @@ listApp.controller('todolistController', function(){
       priority: 2
     }
   ];
-  this.order = 'priority';
+  ctrl.order = 'priority';
+  ctrl.userItem = null;
+  ctrl.userPriority = 0;
+
+  ctrl.add = function() {
+    if(ctrl.userItem == null)
+      return false;
+
+    var item = {
+      thing: ctrl.userItem,
+      priority: ctrl.userPriority
+    };
+    ctrl.userItem = null;
+    ctrl.list.push(item);
+  };
+
 }); //controller
