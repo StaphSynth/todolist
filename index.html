@@ -7,10 +7,17 @@
   </head>
   <body>
     <h1>To Do List</h1>
-    <div ng-app="todolist-app">
-      <div ng-controller="todolist-controller">
+    <div ng-app="todolistApp">
+      <div ng-controller="todolistController as ctrl">
+        Order by:
+        <select ng-model="ctrl.order">
+          <option value="priority">Priority</option>
+          <option value="thing">A-Z</option>
+        </select>
         <ul>
-          <li>
+          <li ng-repeat="item in ctrl.list | orderBy:ctrl.order">
+            <h3>{{ item.thing }}</h3>
+            <p>{{ item.priority }}</p>
           </li>
         </ul>
       </div>
