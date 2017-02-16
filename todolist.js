@@ -46,7 +46,8 @@ listApp.controller('todolistController', function(){
     priorityVal = parseInt(ctrl.userPriority);
     var item = {
       task: ctrl.userTask,
-      priority: priorityVal
+      priority: priorityVal,
+      complete: false
     };
     ctrl.userTask = null;
     ctrl.list.push(item);
