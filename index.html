@@ -30,6 +30,7 @@
             <div class="priority" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" ></div>
             Complete:
             <input type="checkbox" name="complete" value="complete" ng-model="item.complete">
+            <button ng-click="ctrl.delete(item.task)">Delete</button>
           </li>
         </ul>
       </div>

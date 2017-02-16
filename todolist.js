@@ -52,4 +52,13 @@ listApp.controller('todolistController', function(){
     ctrl.list.push(item);
   };
 
+  ctrl.delete = function(task) {
+    for(var i = 0; i < ctrl.list.length; i++) {
+      if(ctrl.list[i].task === task) {
+        ctrl.list.splice(i, 1);
+        return;
+      }
+    }
+  };
+
 }); //controller
