@@ -6,32 +6,32 @@ listApp.controller('todolistController', function(){
   ctrl.list = [
     {
       thing: 'feed the cat',
-      priority: 0
+      priority: "a_high"
     },
     {
       thing: 'wash the dishes',
-      priority: 2
+      priority: "c_low"
     },
     {
       thing: "learn angular",
-      priority: 1
+      priority: 'b_med'
     },
     {
       thing: "get a job",
-      priority: 0
+      priority: 'a_high'
     },
     {
       thing: "watch paint dry",
-      priority: 2
+      priority: 'c_low'
     },
     {
       thing: "aardvarks: advance",
-      priority: 2
+      priority: 'c_low'
     }
   ];
   ctrl.order = 'priority';
   ctrl.userItem = null;
-  ctrl.userPriority = 0;
+  ctrl.userPriority = 'a_high';
 
   ctrl.add = function() {
     if(ctrl.userItem == null)

@@ -1,3 +1,27 @@
 ul li {
   list-style: none;
 }
+
+.a_high {
+  background-color: red;
+  color: red;
+}
+
+.b_med {
+  background-color: yellow;
+  color: yellow;
+}
+
+.c_low {
+  background-color: green;
+  color: green;
+}
+
+.priority {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.001rem;
+  vertical-align: middle;
+}

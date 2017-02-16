@@ -18,14 +18,14 @@
         Thing: <input type="text" ng-model="ctrl.userItem" placeholder="What d'ya have to do?">
         Priority:
         <select ng-model="ctrl.userPriority">
-          <option value="0">High</option>
-          <option value="1">Medium</option>
-          <option value="2">Low</option>
+          <option value="a_high">High</option>
+          <option value="b_med">Medium</option>
+          <option value="c_low">Low</option>
         </select>
         <ul>
           <li ng-repeat="item in ctrl.list | orderBy:ctrl.order">
             <h3>{{ item.thing }}</h3>
-            <p>{{ item.priority }}</p>
+            <div class="priority {{ item.priority }}">{{item.priority}}</div>
           </li>
         </ul>
       </div>
