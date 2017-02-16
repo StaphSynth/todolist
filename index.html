@@ -12,10 +12,11 @@
         Order by:
         <select ng-model="ctrl.order">
           <option value="priority">Priority</option>
-          <option value="thing">A-Z</option>
+          <option value="task">A-Z</option>
+          <option value="complete">Complete</option>
         </select>
         <button ng-click="ctrl.add()">Add this!</button>
-        Thing: <input type="text" ng-model="ctrl.userItem" placeholder="What d'ya have to do?">
+        Task: <input type="text" ng-model="ctrl.userTask" placeholder="What d'ya have to do?">
         Priority:
         <select ng-model="ctrl.userPriority">
           <option value="0">High</option>
@@ -24,7 +25,7 @@
         </select>
         <ul>
           <li ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order">
-            <h3 ng-class="{ 'done': item.complete }">{{ item.thing }}</h3>
+            <h3 ng-class="{ 'done': item.complete }">{{ item.task }}</h3>
             <div class="priority" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" ></div>
             Complete:
             <input type="checkbox" name="complete" value="complete" ng-model="item.complete">
