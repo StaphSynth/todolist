@@ -2,17 +2,17 @@ ul li {
   list-style: none;
 }
 
-.a_high {
+.high {
   background-color: red;
   color: red;
 }
 
-.b_med {
+.med {
   background-color: yellow;
   color: yellow;
 }
 
-.c_low {
+.low {
   background-color: green;
   color: green;
 }
@@ -24,4 +24,11 @@ ul li {
   text-align: center;
   font-size: 0.001rem;
   vertical-align: middle;
+}
+
+.done {
+  text-decoration: line-through;
+}
+.complete {
+  color: grey;
 }

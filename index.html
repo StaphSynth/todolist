@@ -18,14 +18,16 @@
         Thing: <input type="text" ng-model="ctrl.userItem" placeholder="What d'ya have to do?">
         Priority:
         <select ng-model="ctrl.userPriority">
-          <option value="a_high">High</option>
-          <option value="b_med">Medium</option>
-          <option value="c_low">Low</option>
+          <option value="0">High</option>
+          <option value="1">Medium</option>
+          <option value="2">Low</option>
         </select>
         <ul>
-          <li ng-repeat="item in ctrl.list | orderBy:ctrl.order">
-            <h3>{{ item.thing }}</h3>
-            <div class="priority {{ item.priority }}">{{item.priority}}</div>
+          <li ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order">
+            <h3 ng-class="{ 'done': item.complete }">{{ item.thing }}</h3>
+            <div class="priority" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" ></div>
+            Complete:
+            <input type="checkbox" name="complete" value="complete" ng-model="item.complete">
           </li>
         </ul>
       </div>

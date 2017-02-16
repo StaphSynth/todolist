@@ -6,40 +6,47 @@ listApp.controller('todolistController', function(){
   ctrl.list = [
     {
       thing: 'feed the cat',
-      priority: "a_high"
+      priority: 0,
+      complete: false
     },
     {
       thing: 'wash the dishes',
-      priority: "c_low"
+      priority: 2,
+      complete: true
     },
     {
       thing: "learn angular",
-      priority: 'b_med'
+      priority: 1,
+      complete: false
     },
     {
       thing: "get a job",
-      priority: 'a_high'
+      priority: 0,
+      complete: false
     },
     {
       thing: "watch paint dry",
-      priority: 'c_low'
+      priority: 2,
+      complete: false
     },
     {
       thing: "aardvarks: advance",
-      priority: 'c_low'
+      priority: 2,
+      complete: true
     }
   ];
   ctrl.order = 'priority';
   ctrl.userItem = null;
-  ctrl.userPriority = 'a_high';
+  ctrl.userPriority = 0;
 
   ctrl.add = function() {
     if(ctrl.userItem == null)
       return false;
 
+    priorityVal = parseInt(ctrl.userPriority);
     var item = {
       thing: ctrl.userItem,
-      priority: ctrl.userPriority
+      priority: priorityVal
     };
     ctrl.userItem = null;
     ctrl.list.push(item);
