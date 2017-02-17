@@ -24,15 +24,13 @@
           <option value="1">Medium</option>
           <option value="2">Low</option>
         </select>
-        <ul>
+        <ol>
           <li ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order">
-            <h3 ng-class="{ 'done': item.complete }">{{ item.task }}</h3>
-            <div class="priority" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" ></div>
-            Complete:
-            <input type="checkbox" name="complete" value="complete" ng-model="item.complete">
+            <h3 contenteditable ng-class="{ 'done': item.complete }">{{ item.task }}</h3>
+            <button class="priority" ng-click="ctrl.complete(item.task)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
             <button ng-click="ctrl.delete(item.task)">Delete</button>
           </li>
-        </ul>
+        </ol>
       </div>
     </div>
   </body>

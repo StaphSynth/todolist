@@ -1,5 +1,4 @@
-ul li {
-  list-style: none;
+ol li {
   font-family: 'Bad Script', cursive;
 }
 
@@ -9,8 +8,8 @@ ul li {
 }
 
 .med {
-  background-color: yellow;
-  color: yellow;
+  background-color: orange;
+  color: orange;
 }
 
 .low {
@@ -23,8 +22,11 @@ ul li {
   height: 30px;
   border-radius: 50%;
   text-align: center;
-  font-size: 0.001rem;
+  font-size: 1.5rem;
   vertical-align: middle;
+  border: none;
+  color: white;
+  outline: none;
 }
 
 .done {

@@ -7,7 +7,7 @@ listApp.controller('todolistController', function(){
     {
       task: 'feed the cat',
       priority: 0,
-      complete: false
+      complete: true
     },
     {
       task: 'wash the dishes',
@@ -53,13 +53,36 @@ listApp.controller('todolistController', function(){
     ctrl.list.push(item);
   };
 
-  ctrl.delete = function(task) {
-    for(var i = 0; i < ctrl.list.length; i++) {
-      if(ctrl.list[i].task === task) {
-        ctrl.list.splice(i, 1);
-        return;
+  //returns the array index of the task found, else false.
+  ctrl.find = function(task) {
+    if(task) {
+      for(var i = 0; i < ctrl.list.length; i++) {
+        if(ctrl.list[i].task === task) {
+          return i;
+        }
       }
+      return false;
     }
+    return false;
+  };
+
+  //deletes a selected list item
+  ctrl.delete = function(task) {
+    if(task) {
+      ctrl.list.splice(ctrl.find(task), 1);
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  ctrl.complete = function(task) {
+    if(task) {
+      var index = ctrl.find(task);
+      ctrl.list[index].complete ? ctrl.list[index].complete = false : ctrl.list[index].complete = true;
+      return true;
+    }
+    return false;
   };
 
 }); //controller
