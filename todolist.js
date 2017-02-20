@@ -61,10 +61,15 @@ listApp.controller('todolistController', function(){
 
   //deletes a selected list item
   ctrl.delete = function(item) {
-    for(var i = 0; i < ctrl.list.length; i++) {
-      if(ctrl.list[i].task === item.task) {
-        ctrl.list.splice(i, 1);
-        return true;
+    if(item === "all") { //obviosly for all items
+      ctrl.list = [];
+      return true;
+    } else { //for specific items
+      for(var i = 0; i < ctrl.list.length; i++) {
+        if(ctrl.list[i].task === item.task) {
+          ctrl.list.splice(i, 1);
+          return true;
+        }
       }
     }
     return false;

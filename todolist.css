@@ -4,6 +4,11 @@
   flex-direction: row;
 }
 
+#todoAppRoot {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .priorityDiv,
 .taskDiv,
 .deleteDiv {

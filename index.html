@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>To Do List</h1>
-    <div ng-app="todolistApp">
+    <div id="todoAppRoot" ng-app="todolistApp">
       <div ng-controller="todolistController as ctrl">
         Order by:
         <select ng-model="ctrl.order">
@@ -31,23 +31,23 @@
             </form>
           </div> <!-- /taskDiv -->
           <div class="deleteDiv">
-            <button class="deleteButton" ng-click="ctrl.delete()">✗</button>
+            <button class="deleteButton" ng-click="ctrl.delete('all')" title="Remove all tasks">✗</button>
           </div>
         </div> <!-- /itemContainer -->
         <ul id="todolist">
           <li class="tolistItem" ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order">
             <div class="itemContainer">
               <div class="priorityDiv">
-                <button class="priorityButton" ng-click="ctrl.complete(item)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
+                <button class="priorityButton" title="Click to toggle item complete" ng-click="ctrl.complete(item)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
               </div> <!-- priorityDiv -->
               <div class="taskDiv">
                 <form ng-submit="ctrl.editComplete(item)" ng-show="item.editing">
                   <input class="edit" type="text" ng-model="item.task">
                 </form>
-                <p class="task" ng-class="{ 'done': item.complete }" ng-hide="item.editing" ng-dblclick="item.editing = true">{{ item.task }}</p>
+                <p class="task" title="Double click to edit task" ng-class="{ 'done': item.complete }" ng-hide="item.editing" ng-dblclick="item.editing = true">{{ item.task }}</p>
               </div> <!-- /taskDiv -->
               <div class="deleteDiv">
-                <button class="deleteButton" ng-click="ctrl.delete(item)">✗</button>
+                <button class="deleteButton" ng-click="ctrl.delete(item)" title="Remove task">✗</button>
               </div> <!-- /deleteDiv -->
             </div> <!-- /itemContainer -->
           </li>
