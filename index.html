@@ -19,15 +19,15 @@
         </select>
         <div id="inputContainer">
           <div class="priorityDiv">
-            <select ng-model="ctrl.userPriority">
-              <option value="0">High</option>
-              <option value="1">Medium</option>
-              <option value="2">Low</option>
+            <select class="prioritySelect" ng-model="ctrl.userPriority">
+              <option class="high" value="0">High</option>
+              <option class="med" value="1">Medium</option>
+              <option class="low" value="2">Low</option>
             </select>
           </div> <!-- priorityDiv -->
           <div class="taskDiv">
             <form ng-submit="ctrl.add()">
-              <input type="text" ng-model="ctrl.userTask" placeholder="What d'ya have to do?">
+              <input class="taskInput" type="text" ng-model="ctrl.userTask" placeholder="What d'ya have to do?">
             </form>
           </div> <!-- /taskDiv -->
           <div class="deleteDiv">

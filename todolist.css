@@ -91,6 +91,10 @@
   font-size: 1.5rem;
 }
 
+.taskInput {
+  margin: 0 1rem;
+}
+
 form {
   margin: 0;
 }
@@ -104,6 +108,14 @@ button {
   /*display: flex;
   align-items: center;*/
   line-height: 25px;
+}
+
+/*.prioritySelect {
+  background-color: red;
+}*/
+
+.prioritySelect option {
+  color: black;
 }
 
 .deleteButton {
