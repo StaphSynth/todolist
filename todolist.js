@@ -5,7 +5,7 @@ listApp.controller('todolistController', function(){
   var ctrl = this;
   ctrl.list = [
     {
-      task: 'feed the cat, water the cat, take the cat for a walk',
+      task: 'feed the cat, water the cat, take the cat for a walk, skin the cat',
       priority: 0,
       complete: true,
       editing: false
@@ -56,7 +56,7 @@ listApp.controller('todolistController', function(){
       complete: false
     };
     ctrl.userTask = null;
-    ctrl.list.push(item);
+    ctrl.list.unshift(item);
   };
 
   //deletes a selected list item

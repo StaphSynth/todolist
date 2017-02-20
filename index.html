@@ -8,7 +8,7 @@
     <script type="text/javascript" src="todolist.js"></script>
   </head>
   <body>
-    <h1>To Do List</h1>
+    <h1><center>To Do List</center></h1>
     <div id="todoAppRoot" ng-app="todolistApp">
       <div ng-controller="todolistController as ctrl">
         Order by:
@@ -27,7 +27,7 @@
           </div> <!-- priorityDiv -->
           <div class="taskDiv">
             <form ng-submit="ctrl.add()">
-              Task: <input type="text" ng-model="ctrl.userTask" placeholder="What d'ya have to do?">
+              <input type="text" ng-model="ctrl.userTask" placeholder="What d'ya have to do?">
             </form>
           </div> <!-- /taskDiv -->
           <div class="deleteDiv">
@@ -38,7 +38,7 @@
           <li class="tolistItem" ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order">
             <div class="itemContainer">
               <div class="priorityDiv">
-                <button class="priorityButton" title="Click to toggle item complete" ng-click="ctrl.complete(item)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
+                <button class="priorityButton" title="Item complete" ng-click="ctrl.complete(item)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
               </div> <!-- priorityDiv -->
               <div class="taskDiv">
                 <form ng-submit="ctrl.editComplete(item)" ng-show="item.editing">
