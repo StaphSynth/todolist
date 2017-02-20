@@ -5,7 +5,7 @@ listApp.controller('todolistController', function(){
   var ctrl = this;
   ctrl.list = [
     {
-      task: 'feed the cat',
+      task: 'feed the cat, water the cat, take the cat for a walk',
       priority: 0,
       complete: true,
       editing: false

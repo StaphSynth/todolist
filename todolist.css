@@ -1,6 +1,31 @@
-ul li {
-  font-family: 'Bad Script', cursive;
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.priorityDiv,
+.taskDiv,
+.deleteDiv {
+  vertical-align: middle;
+  /*line-height: 30px;*/
+}
+
+.taskDiv {
+  flex-grow: 2;
+  line-height: 1.5rem;
+}
+
+#todolist {
+  padding: 0;
+}
+
+#todolist li {
+  font-family: 'Shadows Into Light', cursive;
   list-style: none;
+  margin: 1rem 0;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 0.5rem;
 }
 
 .high {
@@ -18,7 +43,7 @@ ul li {
   color: green;
 }
 
-.priority {
+.priorityButton {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -35,4 +60,42 @@ ul li {
 }
 .complete {
   color: grey;
+}
+
+.task {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+form {
+  margin: 0;
+}
+
+.edit {
+  margin: 0 1rem;
+}
+
+button {
+  padding: 0;
+  /*display: flex;
+  align-items: center;*/
+  line-height: 25px;
+}
+
+.deleteButton {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  vertical-align: top;
+  border: 2px solid grey;
+  background-color: white;
+  color: grey;
+}
+
+.deleteButton:hover,
+.deleteButton:active {
+  border: 2px solid red;
+  color: red;
 }
