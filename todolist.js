@@ -84,20 +84,6 @@ listApp.controller('todolistController', function(){
     item.complete ? item.complete = false : item.complete = true;
   };
 
-  //edit the task member of a list item
-  ctrl.editTask = function(task) {
-    if(task) {
-      var index = ctrl.find(task);
-      console.log('Item editing: ', ctrl.list[index].task);
-      ctrl.list[index].editing = true;
-    } else {
-      return false;
-    }
-  };
 
-  //reset edit flags after finished editing item
-  ctrl.editComplete = function(item) {
-    item.editing = false;
-  };
 
 }); //controller
