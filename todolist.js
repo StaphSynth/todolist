@@ -8,7 +8,7 @@ listApp.controller('todolistController', function(){
       task: 'feed the cat',
       priority: 0,
       complete: true,
-      editing: true
+      editing: false
     },
     {
       task: 'wash the dishes',
@@ -82,6 +82,10 @@ listApp.controller('todolistController', function(){
     } else {
       return false;
     }
+  };
+
+  ctrl.editComplete = function(item) {
+    item.editing = false;
   };
 
 }); //controller

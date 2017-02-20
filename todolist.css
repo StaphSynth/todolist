@@ -1,5 +1,6 @@
-ol li {
+ul li {
   font-family: 'Bad Script', cursive;
+  list-style: none;
 }
 
 .high {

@@ -24,13 +24,16 @@
           <option value="1">Medium</option>
           <option value="2">Low</option>
         </select>
-        <ol>
+        <ul>
           <li ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order">
-            <h3 contenteditable ng-class="{ 'done': item.complete }">{{ item.task }}</h3>
-            <button class="priority" ng-click="ctrl.complete(item.task)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
-            <button ng-click="ctrl.delete(item.task)">Delete</button>
+            <form ng-submit="ctrl.editComplete(item)" ng-show="item.editing">
+              <input type="text" ng-model="item.task">
+            </form>
+            <p ng-class="{ 'done': item.complete }" ng-hide="item.editing" ng-dblclick="item.editing = true">{{ item.task }}</p>
+            <button class="priority" ng-click="ctrl.complete(item)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
+            <button ng-click="ctrl.delete(item)">Delete</button>
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
   </body>
