@@ -99,16 +99,4 @@ listApp.controller('todolistController', function(){
     item.complete ? item.complete = false : item.complete = true;
   };
 
-  ctrl.editItem = function(item) {
-    for(var i = 0; i < ctrl.list.length; i++) {
-      if(item.task === ctrl.list[i].task) {
-        ctrl.list[i].task = ctrl.userTask;
-        ctrl.list[i].priority = ctrl.userPriority;
-        ctrl.userTask = null;
-        ctrl.userPriority = 0;
-      }
-    }
-  };
-
-
 }); //controller
