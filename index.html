@@ -45,12 +45,12 @@
                     <option class="low">Low</option>
                   </select>
                   <input class="edit" type="text" ng-model="item.task">
-                  <input type="submit" value="Done!" /> 
+                  <input type="submit" value="Done!" />
                 </form>
                 <button ng-hide="item.editing" class="priorityButton" title="Item complete" ng-click="ctrl.complete(item)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
               </div> <!-- priorityDiv -->
               <div class="taskDiv">
-                <p class="task" title="Double click to edit task" ng-class="{ 'done': item.complete }" ng-hide="item.editing" ng-dblclick="item.editing = true">{{ item.task }}</p>
+                <p class="task" title="Double click to edit task" ng-class="{ 'done': item.complete }" ng-hide="item.editing" ng-dblclick="ctrl.editItem(item)">{{ item.task }}</p>
               </div> <!-- /taskDiv -->
               <div class="deleteDiv">
                 <button class="deleteButton" ng-click="ctrl.delete(item)" title="Remove task">✗</button>

@@ -99,4 +99,21 @@ listApp.controller('todolistController', function(){
     item.complete ? item.complete = false : item.complete = true;
   };
 
+  //flips the boolean item.editing flag on an item.
+  //also sets all other item.editing to false, to prevent
+  //editing multiple list items at once
+  ctrl.editItem = function(item) {
+    //if editing false, then set it true and all other editing flags to false
+    //first set all item.editing to false to cancel any other open edits
+    if(!item.editing) {
+      for(var i = 0; i < ctrl.list.length; i++) {
+        ctrl.list[i].editing = false;
+      }
+      //then set only this item.editing to true
+      item.editing = true;
+    } else { //if item.editing already true, set it to false
+      item.editing = false;
+    }
+  };
+
 }); //controller
