@@ -41,6 +41,21 @@ listApp.controller('todolistController', function(){
       editing: false
     }
   ];
+
+  ctrl.priorities = [
+    {
+      id: 0,
+      level: 'high'
+    },
+    {
+      id: 1,
+      level: 'med'
+    },
+    {
+      id: 2,
+      level: 'low'
+    }
+  ];
   ctrl.order = 'priority';
   ctrl.userTask = null;
   ctrl.userPriority = 0;
@@ -84,6 +99,16 @@ listApp.controller('todolistController', function(){
     item.complete ? item.complete = false : item.complete = true;
   };
 
+  ctrl.editItem = function(item) {
+    for(var i = 0; i < ctrl.list.length; i++) {
+      if(item.task === ctrl.list[i].task) {
+        ctrl.list[i].task = ctrl.userTask;
+        ctrl.list[i].priority = ctrl.userPriority;
+        ctrl.userTask = null;
+        ctrl.userPriority = 0;
+      }
+    }
+  };
 
 
 }); //controller
