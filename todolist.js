@@ -56,7 +56,7 @@ listApp.controller('todolistController', function(){
       level: 'low'
     }
   ];
-  ctrl.order = 'priority';
+  ctrl.order ='complete,priority';
   ctrl.userTask = null;
   ctrl.userPriority = 0;
 

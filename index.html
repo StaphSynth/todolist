@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="todolist.css">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-     <script type="text/javascript" src="todolist.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script type="text/javascript" src="todolist.js"></script>
   </head>
   <body>
     <h1><center>To Do List</center></h1>
@@ -13,9 +13,8 @@
       <div ng-controller="todolistController as ctrl">
         Order by:
         <select ng-model="ctrl.order">
-          <option value="priority">Priority</option>
-          <option value="task">A-Z</option>
-          <option value="complete">Complete</option>
+          <option value="priority,complete">Priority</option>
+          <option value="complete,priority">Complete</option>
         </select>
         <div id="inputContainer">
           <div class="priorityDiv">
@@ -35,16 +34,16 @@
           </div>
         </div> <!-- /itemContainer -->
         <ul id="todolist">
-          <li class="tolistItem" ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order">
+          <li class="tolistItem" ng-class="{ 'complete': item.complete }" ng-repeat="item in ctrl.list | orderBy:ctrl.order.split(',')">
             <div class="itemContainer">
               <div class="priorityDiv">
                 <form ng-submit="item.editing = false" ng-show="item.editing">
-                  <select ng-options="priority.id as priority.level for priority in ctrl.priorities" ng-show="item.editing" class="prioritySelect" ng-model="item.priority"  ng-model-options="{ updateOn: 'submit' }">
+                  <select ng-options="priority.id as priority.level for priority in ctrl.priorities" ng-show="item.editing" class="prioritySelect" ng-model="item.priority" ng-model-options="{ updateOn: 'submit' }">
                     <option class="high">High</option>
                     <option class="med">Medium</option>
                     <option class="low">Low</option>
                   </select>
-                  <input class="edit" type="text" ng-model="item.task">
+                  <input class="edit" type="text" ng-model="item.task" ng-model-options="{ updateOn: 'submit' }">
                   <input type="submit" value="Done!" />
                 </form>
                 <button ng-hide="item.editing" class="priorityButton" title="Item complete" ng-click="ctrl.complete(item)" ng-class="{ 'high': item.priority === 0, 'med': item.priority === 1, 'low': item.priority === 2 }" >{{item.complete ? '✔' : ''}}</button>
