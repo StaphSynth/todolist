@@ -18,6 +18,7 @@
         </select>
         <div id="inputContainer">
           <div class="priorityDiv">
+            Priority:
             <select ng-options="priority.id as priority.level for priority in ctrl.priorities" class="prioritySelect" ng-model="ctrl.userPriority">
               <option>High</option>
               <option>Medium</option>
@@ -26,7 +27,7 @@
           </div> <!-- priorityDiv -->
           <div class="taskDiv">
             <form ng-submit="ctrl.add()">
-              <input class="taskInput" type="text" ng-model="ctrl.userTask" placeholder="What d'ya have to do?">
+              <input class="taskInput" type="text" ng-model="ctrl.userTask" placeholder="Enter a task">
             </form>
           </div> <!-- /taskDiv -->
           <div class="deleteDiv">
