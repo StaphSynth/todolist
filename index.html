@@ -19,15 +19,15 @@
         <div id="masterContainer">
           <div id="inputContainer">
             <div class="priorityDiv">
-              <button ng-hide="item.editing" style="margin-right: 0.5rem;" class="priorityButton masterPriority" ng-class="{ 'mComplete': ctrl.masterPriority == true }" title="Mark all complete" ng-click="ctrl.complete('all')">✔</button>
+              <button ng-hide="item.editing" class="priorityButton masterPriority" ng-class="{ 'mComplete': ctrl.masterPriority == true }" title="Mark all complete" ng-click="ctrl.complete('all')">✔</button>
+            </div> <!-- priorityDiv -->
+            <div class="taskDiv">
               Priority:
               <select ng-options="priority.id as priority.level for priority in ctrl.priorities" class="prioritySelect" ng-model="ctrl.userPriority">
                 <option>High</option>
                 <option>Medium</option>
                 <option>Low</option>
               </select>
-            </div> <!-- priorityDiv -->
-            <div class="taskDiv">
               <form ng-submit="ctrl.add()">
                 <input class="taskInput" type="text" ng-model="ctrl.userTask" placeholder="Enter a task">
                 <input type="submit" value="Done!" class="submitButton">
@@ -37,7 +37,8 @@
               <button class="deleteButton" ng-click="ctrl.delete('all')" title="Remove all tasks">✗</button>
             </div>
           </div> <!-- /inputContainer -->
-          <div class="reportingContainer">
+          <div class="reportingContainer" ng-show="ctrl.list.length">
+            <span class="reports" ng-bind="ctrl.getReport()"></span>
           </div> <!-- /reportingContainer -->
         </div> <!-- /masterContainer -->
         <ul id="todolist">

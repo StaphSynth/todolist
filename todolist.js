@@ -113,6 +113,41 @@ listApp.controller('todolistController', function(){
     }
   };
 
+  ctrl.getCompletedItems = function(type) {
+    var complete = 0;
+    var incomplete = 0;
+
+    for(var i = 0; i < ctrl.list.length; i++) {
+      if(ctrl.list[i].complete)
+        complete++;
+      else
+        incomplete++;
+    }
+
+    if(type === 'complete')
+      return complete;
+    else if(type === 'incomplete')
+      return incomplete;
+  };
+
+  //returns a string explaining number of items in list,
+  //items complete, items incomplete, etc.
+  ctrl.getReport = function() {
+    var report = ctrl.list.length.toString();
+
+    if(ctrl.list.length > 1)
+      report += ' Tasks: ';
+    else
+      report += ' Task: ';
+
+    report += ctrl.getCompletedItems('complete').toString();
+    report += ' complete, ';
+    report += ctrl.getCompletedItems('incomplete').toString();
+    report += ' incomplete.';
+
+    return report;
+  };
+
   //flips the boolean item.editing flag on an item.
   //also sets all other item.editing to false, to prevent
   //editing multiple list items at once

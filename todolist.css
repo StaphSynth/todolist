@@ -1,7 +1,13 @@
 .itemContainer,
-#inputContainer {
+#inputContainer,
+.taskDiv {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.taskDiv {
+  margin: 0 0.5rem;
 }
 
 #todoAppRoot {
@@ -12,12 +18,28 @@
 .priorityDiv,
 .taskDiv,
 .deleteDiv {
-  vertical-align: middle;
+  /*vertical-align: middle;*/
 }
 
 .taskDiv {
   flex-grow: 2;
   line-height: 1.5rem;
+}
+
+/*#inputContainer {
+  padding-bottom: 0.33rem;
+}*/
+
+.reportingContainer {
+  border-top: solid 1px black;
+  margin-top: 0.33rem;
+  padding-top: 0.33rem;
+  text-align: center;
+
+}
+
+.reports {
+  font-size: 0.75rem;
 }
 
 #todolist {
@@ -84,7 +106,6 @@
 
 .masterPriority {
   background-color: black;
-  margin-right: 0.5rem;
 }
 
 .mComplete {
@@ -122,14 +143,8 @@ form {
 
 button {
   padding: 0;
-  /*display: flex;
-  align-items: center;*/
   line-height: 25px;
 }
-
-/*.prioritySelect {
-  background-color: red;
-}*/
 
 .prioritySelect option {
   color: black;
@@ -145,7 +160,6 @@ button {
   border: 2px solid grey;
   background-color: white;
   color: grey;
-  margin-left: 0.5rem;
 }
 
 .deleteButton:hover,
