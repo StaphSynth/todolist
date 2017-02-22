@@ -59,6 +59,7 @@ listApp.controller('todolistController', function(){
   ctrl.order ='priority,complete';
   ctrl.userTask = null;
   ctrl.userPriority = 0;
+  ctrl.masterPriority = false;
 
   //adds an item to the list
   ctrl.add = function() {
@@ -95,8 +96,21 @@ listApp.controller('todolistController', function(){
 
   //mark list item as complete
   //pass a list item object to mark
+  //or pass string 'all' to mark whole list either complete or incomplete
   ctrl.complete = function(item) {
+    if(item === 'all' && ctrl.masterPriority == false) {
+      for(var i = 0; i < ctrl.list.length; i++) {
+        ctrl.list[i].complete = true;
+      }
+      ctrl.masterPriority = true;
+    } else if(item === 'all' && ctrl.masterPriority == true) {
+      for(var i = 0; i < ctrl.list.length; i++) {
+        ctrl.list[i].complete = false;
+      }
+      ctrl.masterPriority = false;
+    } else {
     item.complete ? item.complete = false : item.complete = true;
+    }
   };
 
   //flips the boolean item.editing flag on an item.

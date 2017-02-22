@@ -13,7 +13,6 @@
 .taskDiv,
 .deleteDiv {
   vertical-align: middle;
-  /*line-height: 30px;*/
 }
 
 .taskDiv {
@@ -34,7 +33,7 @@
   padding: 0.5rem;
 }
 
-#inputContainer {
+#masterContainer {
   margin: 1rem 0;
   border: 1px solid black;
   border-radius: 10px;
@@ -67,6 +66,10 @@
   color: green;
 }
 
+.submitButton {
+  padding: 0;
+}
+
 .priorityButton {
   width: 30px;
   height: 30px;
@@ -78,6 +81,20 @@
   color: white;
   outline: none;
 }
+
+.masterPriority {
+  background-color: black;
+  margin-right: 0.5rem;
+}
+
+.mComplete {
+  background-color: green;
+}
+
+.masterPriority:hover {
+  background-color: green;
+}
+
 
 .done {
   text-decoration: line-through;
@@ -128,6 +145,7 @@ button {
   border: 2px solid grey;
   background-color: white;
   color: grey;
+  margin-left: 0.5rem;
 }
 
 .deleteButton:hover,
