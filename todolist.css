@@ -32,8 +32,8 @@
 
 .reportingContainer {
   border-top: solid 1px black;
-  margin-top: 0.33rem;
-  padding-top: 0.33rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
   text-align: center;
 
 }
@@ -104,7 +104,7 @@
   outline: none;
 }
 
-.masterPriority {
+.masterCompleted {
   background-color: black;
 }
 
@@ -112,7 +112,7 @@
   background-color: green;
 }
 
-.masterPriority:hover {
+.masterCompleted:hover {
   background-color: green;
 }
 
