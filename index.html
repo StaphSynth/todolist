@@ -22,16 +22,20 @@
               <button ng-hide="item.editing" class="priorityButton masterCompleted" ng-class="{ 'mComplete': ctrl.masterCompleted == true }" title="Mark all complete" ng-click="ctrl.complete('all')">✔</button>
             </div> <!-- priorityDiv -->
             <div class="taskDiv">
-              Priority:&nbsp;
-              <select ng-options="priority.id as priority.level for priority in ctrl.priorities" class="prioritySelect" ng-model="ctrl.userPriority">
-                <option>High</option>
-                <option>Medium</option>
-                <option>Low</option>
-              </select>
-              <form ng-submit="ctrl.add()">
-                <input class="taskInput" type="text" ng-model="ctrl.userTask" placeholder="Enter a task">
-                <input type="submit" value="Done!" class="submitButton">
-              </form>
+              <span>
+                Priority:
+                <select ng-options="priority.id as priority.level for priority in ctrl.priorities" class="prioritySelect" ng-model="ctrl.userPriority">
+                  <option>High</option>
+                  <option>Medium</option>
+                  <option>Low</option>
+                </select>
+              </span>
+              <span>
+                <form ng-submit="ctrl.add()">
+                  <input class="taskInput" type="text" ng-model="ctrl.userTask" placeholder="Enter a task">
+                  <input type="submit" value="Done!" class="submitButton">
+                </form>
+              </span>
             </div> <!-- /taskDiv -->
             <div class="deleteDiv">
               <button class="deleteButton" ng-click="ctrl.delete('all')" title="Remove all tasks">✗</button>

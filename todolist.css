@@ -6,11 +6,21 @@
 }
 
 #inputContainer {
-  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .taskDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
   margin: 0 0.5rem;
+}
+
+.taskDiv span select,
+.taskDiv span input {
+  margin: 0.25rem;
 }
 
 #todoAppRoot {
@@ -34,6 +44,10 @@
   padding-top: 0.5rem;
   text-align: center;
 
+}
+
+.priorityDiv form input {
+  margin: 0.25rem;
 }
 
 .reports {
@@ -128,7 +142,7 @@
 }
 
 .taskInput {
-  margin: 0 1rem;
+  /*margin: 0 1rem;*/
 }
 
 form {
