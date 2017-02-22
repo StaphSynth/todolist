@@ -3,8 +3,12 @@
 .taskDiv {
   display: flex;
   flex-direction: row;
+}
+
+#inputContainer {
   align-items: center;
 }
+
 
 .taskDiv {
   margin: 0 0.5rem;
@@ -18,17 +22,12 @@
 .priorityDiv,
 .taskDiv,
 .deleteDiv {
-  /*vertical-align: middle;*/
 }
 
 .taskDiv {
   flex-grow: 2;
   line-height: 1.5rem;
 }
-
-/*#inputContainer {
-  padding-bottom: 0.33rem;
-}*/
 
 .reportingContainer {
   border-top: solid 1px black;
