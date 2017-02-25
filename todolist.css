@@ -36,6 +36,14 @@
 .taskDiv {
   flex-grow: 2;
   line-height: 1.5rem;
+  max-width: 500px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.task {
+  font-size: 1.5rem;
+  max-width: 100%;
 }
 
 .reportingContainer {
@@ -134,15 +142,6 @@
 }
 .complete {
   color: grey;
-}
-
-.task {
-  margin: 0 1rem;
-  font-size: 1.5rem;
-}
-
-.taskInput {
-  /*margin: 0 1rem;*/
 }
 
 form {
